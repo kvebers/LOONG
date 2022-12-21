@@ -6,14 +6,14 @@
 #    By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 14:35:46 by kvebers           #+#    #+#              #
-#    Updated: 2022/12/20 16:17:38 by kvebers          ###   ########.fr        #
+#    Updated: 2022/12/21 15:15:44 by kvebers          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= so_long
 CFLAGS	= -Wall -Wextra -Werror
 CC		= cc
-FILES	= src/start.c src/utils.c src/textures.c
+FILES	= src/start.c src/utils.c src/textures.c src/free.c
 LFLAGS	=	-L ./mlx -lmlx
 RM = 		rm -f
 OBJ	= $(FILES:%.c=%.o)

@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:11:52 by kvebers           #+#    #+#             */
-/*   Updated: 2022/12/20 16:34:04 by kvebers          ###   ########.fr       */
+/*   Updated: 2022/12/21 15:21:58 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,13 @@ typedef struct data
     char    y;
 }	t_data;
 //Utills.c
-t_textures		*init_textures(int cnt);
+t_textures		*init_textures(t_data *data, int cnt);
 int				calculate_width(char *name);
 int				calculate_height(char *name);
 char			*ft_strjoin3(char *s1, char *s2);
 int				init_y(int width, char *map);
 int				init_x(int width, char *map);
 mlx_texture_t	*wall_texture(int cnt);
+void			free_data_textures(t_data *data, t_textures *textures);
 
 #endif

@@ -6,14 +6,14 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 10:42:20 by kvebers           #+#    #+#             */
-/*   Updated: 2022/12/20 16:16:26 by kvebers          ###   ########.fr       */
+/*   Updated: 2022/12/21 17:15:52 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
 
-char	*create_map(char *name)
+char	*create_name(char *name)
 {
 	int fd2;
 	char *line;
@@ -32,12 +32,12 @@ char	*create_map(char *name)
 	return (temp);
 }
 
-int	init_map(t_data *data)
+int	start_game(t_data *data, t_textures *textures)
 {
-	
-ft_printf("%i",data->x);
-data->x = 5;
-ft_printf("%i", data->x);
+	mlx_image_to_window(data->mlx, textures->ground_img, 0, 0);
+	mlx_loop_hook();
+	mlx_loop(data->mlx);
+	mlx_terminate(data->mlx);
 return (0);
 }
 
@@ -52,19 +52,21 @@ int init_game(char *argv)
 	data->name = ft_strjoin("./maps/",argv);
 	data->width = calculate_width(data->name);
 	data->height = calculate_height(data->name);
-	data->map = create_map(data->name);
+	data->map = create_name(data->name);
 	data->height = calculate_height(data->name);
 	data->x = init_x(data->width, data->map);
 	data->y = init_y(data->width, data->map);
 	data->mlx = mlx_init((data->width - 1) * 60, data->height * 85, "Card Game", false);
-	textures = init_textures(0);
-	init_map(data);
-	//free_data_textures(data, textures);
-	return (free(data->map), free(data->name), free(data), 0);
+	textures = init_textures(data, 0);
+	start_game(data, textures);
+	free_data_textures(data, textures);
+	return (0);
 }
 
 int	main(int argc, char **argv)
 {
+	system("say Hahahaha &");
+	// system("killall say");
 	if (argc != 2)
     {
 		return (0);
