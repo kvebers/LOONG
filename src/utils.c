@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 14:19:26 by kvebers           #+#    #+#             */
-/*   Updated: 2022/12/21 16:13:07 by kvebers          ###   ########.fr       */
+/*   Updated: 2022/12/22 11:31:57 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ int init_x(int width, char *map)
     while(*(map + cnt) != 'P')
         cnt++;
     return(cnt % width);
-    
 }
 
 int init_y(int width, char *map)
