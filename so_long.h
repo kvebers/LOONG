@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:11:52 by kvebers           #+#    #+#             */
-/*   Updated: 2022/12/22 19:21:32 by kvebers          ###   ########.fr       */
+/*   Updated: 2022/12/23 12:39:32 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 # include "libft/libft.h"
 # include <stdio.h>
 # include "./MLX42/include/MLX42/MLX42.h"
-
-
 
 // typedef struct textures
 // {
@@ -59,6 +57,7 @@ typedef struct data
 	mlx_image_t		*player_img[10];
 	mlx_image_t		*exit_img;
 	mlx_image_t		*temp_img;
+	int				key;
 }	t_data;
 
 //Utills.c
@@ -76,5 +75,6 @@ void			init_map(t_data *data);
 int				init_game(char *argv);
 mlx_image_t		*oof(t_data *data, int cnt);
 char			*create_name(char *name);
+void			start_game(t_data *data);
 
 #endif
