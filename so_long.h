@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:11:52 by kvebers           #+#    #+#             */
-/*   Updated: 2022/12/23 12:39:32 by kvebers          ###   ########.fr       */
+/*   Updated: 2022/12/28 12:43:45 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,16 @@ typedef struct data
 	mlx_texture_t 	*ground;
 	mlx_texture_t	*wall[52];
 	mlx_texture_t	*enemy[10];
-	mlx_texture_t	*player[10];
+	mlx_texture_t	*player[15];
 	mlx_texture_t	*exit;
 	mlx_image_t		*ground_img;
 	mlx_image_t		*wall_img[52];
-	mlx_image_t		*enemy_img[10];
-	mlx_image_t		*player_img[10];
 	mlx_image_t		*exit_img;
 	mlx_image_t		*temp_img;
-	int				key;
+	char			last_key;
+	int				frames;
+	
+	
 }	t_data;
 
 //Utills.c
@@ -76,5 +77,19 @@ int				init_game(char *argv);
 mlx_image_t		*oof(t_data *data, int cnt);
 char			*create_name(char *name);
 void			start_game(t_data *data);
+void			init_player(t_data *data);
+void			player_textures(t_data *data);
+
+
+//Keyhooks
+void	keyhook(mlx_key_data_t key_data, void *param);
+void	count_frames(void *param);
+void	update_player(void *param);
+
+void	pressed_w(t_data *data);
+void	pressed_s(t_data *data);
+void	pressed_d(t_data *data);
+void	pressed_a(t_data *data);
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:17:17 by kvebers           #+#    #+#             */
-/*   Updated: 2022/12/22 19:13:31 by kvebers          ###   ########.fr       */
+/*   Updated: 2022/12/28 12:10:58 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ mlx_texture_t *wall_texture(int cnt)
 	char *card2;
 	
 	card = ft_itoa(cnt);
-	card1 = ft_strjoin("./textures/", card);
+	card1 = ft_strjoin("./textures/walls/", card);
 	free(card);
 	card2 = ft_strjoin(card1, ".png");
 	free(card1);
@@ -43,6 +43,27 @@ void	init_textures(t_data *data, int cnt)
 		data -> wall_img[cnt - 1] = wall_img(data->mlx, data->wall[cnt - 1]);
 	}
 	cnt = 0;
-	data->ground = mlx_load_png("./textures/basic.png");
+	data->ground = mlx_load_png("./textures/walls/basic.png");
 	data->ground_img = mlx_texture_to_image(data->mlx, data->ground);
+	player_textures(data);
+	
+}
+
+void	player_textures(t_data *data)
+{
+	data->player[0] = mlx_load_png("./textures/player/S_Walk1.png");
+	data->player[1] = mlx_load_png("./textures/player/S_Walk2.png");
+	data->player[2] = mlx_load_png("./textures/player/W_Walk1.png");
+	data->player[3] = mlx_load_png("./textures/player/W_Walk2.png");
+	data->player[4] = mlx_load_png("./textures/player/A_Walk1.png");
+	data->player[5] = mlx_load_png("./textures/player/A_Walk2.png");
+	data->player[6] = mlx_load_png("./textures/player/A_Walk3.png");
+	data->player[7] = mlx_load_png("./textures/player/D_Walk1.png");
+	data->player[8] = mlx_load_png("./textures/player/D_Walk2.png");
+	data->player[9] = mlx_load_png("./textures/player/D_Walk3.png");
+	data->player[10] = mlx_load_png("./textures/player/Idle1.png");
+	data->player[11] = mlx_load_png("./textures/player/Idle2.png");
+	data->player[12] = mlx_load_png("./textures/player/Idle3.png");
+	data->player[13] = mlx_load_png("./textures/player/Idle4.png");
+	data->player[14] = mlx_load_png("./textures/player/Idle5.png");
 }
