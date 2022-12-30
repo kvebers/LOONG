@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:11:52 by kvebers           #+#    #+#             */
-/*   Updated: 2022/12/30 11:01:01 by kvebers          ###   ########.fr       */
+/*   Updated: 2022/12/30 18:46:00 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,16 @@ typedef struct data
 	mlx_image_t		*temp_img;
 }	t_data;
 
+typedef struct check
+{
+	char	*name;
+	int		width;
+	int		height;
+	char	*map;
+    int		x;
+    int		y;
+}	t_check;
+
 //Utills.c
 int				calculate_width(char *name);
 int				calculate_height(char *name);
@@ -83,4 +93,8 @@ void	init_gates(t_data *data);
 void	update_gates(t_data *d);
 void	check_win(t_data *data, int x, int y);
 void    free_data(t_data *data);
+int		protection(char *argv);
+int		check_name(char *argv);
+int		check_chars(t_check *data);
+int		check_must_have(t_check *data);
 #endif

@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 10:42:20 by kvebers           #+#    #+#             */
-/*   Updated: 2022/12/30 10:22:12 by kvebers          ###   ########.fr       */
+/*   Updated: 2022/12/30 16:46:53 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,13 @@ int	main(int argc, char **argv)
 	// system("killall say");
 	if (argc != 2)
     {
+		ft_printf("Error: Incorrect call ./so_long map_name.ber, maps should be under folder maps");
 		return (0);
     }
 	else
 	{
-		init_game(argv[1]);
+		if (protection(argv[1]) == 1)
+			init_game(argv[1]);
 	}
 	system("leaks so_long");
 //	system("leaks bonus");

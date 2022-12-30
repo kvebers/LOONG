@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 19:16:59 by kvebers           #+#    #+#             */
-/*   Updated: 2022/12/30 10:08:03 by kvebers          ###   ########.fr       */
+/*   Updated: 2022/12/30 12:02:51 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int init_game(char *argv)
 	data->height = calculate_height(data->name);
 	data->x = init_x(data->width, data->map);
 	data->y = init_y(data->width, data->map);
-	data->mlx = mlx_init((data->width - 1) * 60, data->height * 84, "Card Game", false);
+	data->mlx = mlx_init((data->width - 1) * 60, data->height * 84, "Those are my jokes lad", false);
 	data->frames = 0;
 	data->turn_counter = 0;
 	init_textures(data, 0);

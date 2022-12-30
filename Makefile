@@ -6,7 +6,7 @@
 #    By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 14:35:46 by kvebers           #+#    #+#              #
-#    Updated: 2022/12/30 08:09:34 by kvebers          ###   ########.fr        #
+#    Updated: 2022/12/30 11:58:37 by kvebers          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	= so_long
 CFLAGS	= -Wall -Wextra -Werror
 CC		= cc
 FILES	= src/start.c src/utils.c src/textures.c src/free.c src/init.c \
-		  src/hooks.c src/key.c src/init_gates.c
+		  src/hooks.c src/key.c src/init_gates.c src/protection.c
 LFLAGS	=	-L ./mlx -lmlx
 RM = 		rm -f
 OBJ	= $(FILES:%.c=%.o)

@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 12:42:34 by kvebers           #+#    #+#             */
-/*   Updated: 2022/12/30 10:46:32 by kvebers          ###   ########.fr       */
+/*   Updated: 2022/12/30 17:54:26 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	pressed_a(t_data *data)
 		check_win(data, data->x - 1, data->y);
 		data -> x = data -> x - 1;
 		data->turn_counter++;
-		ft_printf("\nTurns done: %i", data->turn_counter);
+		ft_printf("Turns done: %i\n\n", data->turn_counter);
 		
 	}
 }
