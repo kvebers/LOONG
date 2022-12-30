@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:17:17 by kvebers           #+#    #+#             */
-/*   Updated: 2022/12/28 12:10:58 by kvebers          ###   ########.fr       */
+/*   Updated: 2022/12/30 10:24:20 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ mlx_image_t *wall_img(mlx_t *mlx, mlx_texture_t *texture)
 
 void	init_textures(t_data *data, int cnt)
 {
-	while (cnt++ < 52)
+	while (cnt++ < 26)
 	{
 		data -> wall[cnt - 1] = wall_texture(cnt);
 		data -> wall_img[cnt - 1] = wall_img(data->mlx, data->wall[cnt - 1]);
@@ -45,8 +45,9 @@ void	init_textures(t_data *data, int cnt)
 	cnt = 0;
 	data->ground = mlx_load_png("./textures/walls/basic.png");
 	data->ground_img = mlx_texture_to_image(data->mlx, data->ground);
+	data->coins = mlx_load_png("./textures/coins/coin.png");
+	data->coins_img = mlx_texture_to_image(data->mlx, data->coins);
 	player_textures(data);
-	
 }
 
 void	player_textures(t_data *data)
@@ -66,4 +67,9 @@ void	player_textures(t_data *data)
 	data->player[12] = mlx_load_png("./textures/player/Idle3.png");
 	data->player[13] = mlx_load_png("./textures/player/Idle4.png");
 	data->player[14] = mlx_load_png("./textures/player/Idle5.png");
+	data->exit[0] = mlx_load_png("./textures/walls/basic3.png");
+	data->exit_img[0] = mlx_texture_to_image(data->mlx, data->exit[0]);
+    data->exit[1] = mlx_load_png("./textures/walls/basic2.png");
+	data->exit_img[1] = mlx_texture_to_image(data->mlx, data->exit[1]);
 }
+

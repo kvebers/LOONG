@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 19:16:59 by kvebers           #+#    #+#             */
-/*   Updated: 2022/12/28 14:59:50 by kvebers          ###   ########.fr       */
+/*   Updated: 2022/12/30 10:08:03 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 mlx_image_t	*oof(t_data *data, int cnt)
 {
-	return (data->wall_img[(cnt * 11001 + 12345) % 52]);
+	return (data->wall_img[(cnt * 11001 + 12345) % 26]);
 }
 
 void init_player(t_data *d)
@@ -23,7 +23,7 @@ void init_player(t_data *d)
 	mlx_image_to_window(d->mlx, d->temp_img, d->x * 60 + 15, d->y * 84 + 30);
 }
 
-void init_map(t_data *da)
+void init_map(t_data *d)
 {
 	int x;
 	int y;
@@ -32,20 +32,20 @@ void init_map(t_data *da)
 	cnt = 0;
 	y = 0;
 	x = 0;
-	while(y < da->height)
+	while(y < d->height)
 	{
 		x = 0;
-		while(x < da->width)
+		while(x < d->width)
 		{
-			if (da->map[cnt] == '1')
+			if (d->map[cnt] == '1')
 			{
-				mlx_image_to_window(da->mlx, oof(da, cnt), x * 60, y * 84);
+				mlx_image_to_window(d->mlx, oof(d, cnt), x * 60, y * 84);
 			}
-			else if(da->map[cnt] == '\n')
+			else if(d->map[cnt] == '\n' || d->map[cnt] == 'E')
 			{
 			}
 			else
-				mlx_image_to_window(da->mlx, da->ground_img, x * 60, y  * 84);
+				mlx_image_to_window(d->mlx, d->ground_img, x * 60, y  * 84);
 			x++;
 			cnt++;
 		}

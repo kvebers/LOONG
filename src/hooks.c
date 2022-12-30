@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 11:08:52 by kvebers           #+#    #+#             */
-/*   Updated: 2022/12/28 14:59:36 by kvebers          ###   ########.fr       */
+/*   Updated: 2022/12/29 17:06:25 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ void	update_player(void *param)
 	mlx_image_to_window(d->mlx, d->temp_img, d->x * 60 + 15, d->y * 84 + 30);
 }
 
-void	count_frames(void *param)
-{
-	t_data	*d;
-	d = param;
-	d->frames++;
-	if(d->frames > 20000)
-		d->frames = 0;
-}
+// void	count_frames(void *param)
+// {
+// 	t_data	*d;
+// 	d = param;
+// 	d->frames++;
+// 	if(d->frames > 20000)
+// 		d->frames = 0;
+// }
 
 void	keyhook(mlx_key_data_t key_data, void *param)
 {

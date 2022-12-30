@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:11:52 by kvebers           #+#    #+#             */
-/*   Updated: 2022/12/28 12:43:45 by kvebers          ###   ########.fr       */
+/*   Updated: 2022/12/30 11:01:01 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,6 @@
 # include <stdio.h>
 # include "./MLX42/include/MLX42/MLX42.h"
 
-// typedef struct textures
-// {
-// 	mlx_texture_t 	*ground;
-// 	mlx_texture_t	*wall[52];
-// 	mlx_texture_t	*enemy[10];
-// 	mlx_texture_t	*player[10];
-// 	mlx_texture_t	*exit;
-// 	mlx_image_t		*ground_img;
-// 	mlx_image_t		*wall_img[52];
-// 	mlx_image_t		*enemy_img[10];
-// 	mlx_image_t		*player_img[10];
-// 	mlx_image_t		*exit_img;
-// }	t_textures;
 
 typedef struct data
 {
@@ -46,19 +33,19 @@ typedef struct data
     int		y;
 	int		turn_counter;
 	int		turns;
+	int 	value;
+	int		frames;
 	mlx_texture_t 	*ground;
-	mlx_texture_t	*wall[52];
+	mlx_texture_t	*wall[26];
 	mlx_texture_t	*enemy[10];
 	mlx_texture_t	*player[15];
-	mlx_texture_t	*exit;
+	mlx_texture_t	*exit[2];
+	mlx_texture_t	*coins;
+	mlx_image_t		*coins_img;
 	mlx_image_t		*ground_img;
-	mlx_image_t		*wall_img[52];
-	mlx_image_t		*exit_img;
+	mlx_image_t		*wall_img[28];
+	mlx_image_t		*exit_img[2];
 	mlx_image_t		*temp_img;
-	char			last_key;
-	int				frames;
-	
-	
 }	t_data;
 
 //Utills.c
@@ -90,6 +77,10 @@ void	pressed_w(t_data *data);
 void	pressed_s(t_data *data);
 void	pressed_d(t_data *data);
 void	pressed_a(t_data *data);
-
-
+void	render_coins(t_data *data);
+void	init_coins(t_data *data);
+void	init_gates(t_data *data);
+void	update_gates(t_data *d);
+void	check_win(t_data *data, int x, int y);
+void    free_data(t_data *data);
 #endif
