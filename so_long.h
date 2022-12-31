@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:11:52 by kvebers           #+#    #+#             */
-/*   Updated: 2022/12/30 18:46:00 by kvebers          ###   ########.fr       */
+/*   Updated: 2022/12/31 20:34:00 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,7 @@ int		protection(char *argv);
 int		check_name(char *argv);
 int		check_chars(t_check *data);
 int		check_must_have(t_check *data);
+int 	surrounded_by_walls(t_check *data, int cnt, int error);
+int 	check_rec(t_check *data, int cnt);
+int		check_path_setup(t_check *data);
 #endif

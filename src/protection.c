@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:50:33 by kvebers           #+#    #+#             */
-/*   Updated: 2022/12/30 18:46:31 by kvebers          ###   ########.fr       */
+/*   Updated: 2022/12/31 20:35:05 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,13 @@ int protection(char *argv)
 	data->height = calculate_height(data->name);
 	data->map = create_name(data->name);
 	data->height = calculate_height(data->name);
-    if (check_chars(data) == 0)
+    if (check_chars(data) == 0 || check_rec(data, 0) == 0)
         return(free(data->name), free(data->map), free(data), 0);
 	data->x = init_x(data->width, data->map);
 	data->y = init_y(data->width, data->map);
-    if (check_must_have(data) == 0)
+    if (check_must_have(data) == 0 || surrounded_by_walls(data, 0, 0) == 0)
+        return(free(data->name), free(data->map), free(data), 0);
+    if (check_path_setup(data) == 0)
         return(free(data->name), free(data->map), free(data), 0);
     return(free(data->name), free(data->map), free(data), 1);
 }
@@ -81,3 +83,28 @@ int check_must_have(t_check *data)
     }
     return (1);
 }
+
+int surrounded_by_walls(t_check *d, int cnt, int error)
+{
+    while (d->map[cnt] != '\0')
+    {
+        if(d->map[cnt] == '\n')
+            cnt++;
+        if (d->map[cnt] != '1' && cnt / d->width == 0)
+            error = 1;
+        if (d->map[cnt] != '1' && cnt % d->width == 0)
+            error = 1;
+        if (cnt % d->width == d->width - 2 && d->map[cnt] != '1')
+            error = 1;
+        if (cnt / d->width == d->height - 1 && d->map[cnt] != '1')
+            error = 1;
+        if (error == 1)
+        {
+            ft_printf("Error not surrounded, by walls");
+            return (0);
+        }
+        cnt++;
+    }
+    return (1);
+}
+
