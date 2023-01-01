@@ -6,20 +6,31 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 11:08:52 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/01 12:34:36 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/01 19:20:16 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../so_long_bonus.h"
 
 void	update_player(void *param)
 {
 	t_data	*d;
 
-	d = param;
+	d = (t_data *)param;
 	mlx_delete_image(d->mlx, d->temp_img);
 	d->temp_img = mlx_texture_to_image(d->mlx, d->player[0]);
 	mlx_image_to_window(d->mlx, d->temp_img, d->x * 60 + 15, d->y * 84 + 30);
+}
+
+void	count_frames(void *param)
+{
+	t_data	*d;
+
+	d = (t_data *)param;
+	d->frames++;
+	if (d->frames > 5000)
+		d->frames = 0;
+		ft_printf("%i\n", d->frames);
 }
 
 void	keyhook(mlx_key_data_t key_data, void *param)

@@ -6,11 +6,11 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 15:18:07 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/01 12:31:55 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/01 19:16:20 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../so_long_bonus.h"
 
 void	free_data_textures(t_data *data)
 {
@@ -40,8 +40,17 @@ void	free_data_textures(t_data *data)
 
 void	free_data(t_data *data)
 {
+	int cnt;
+
+	cnt = 0;
 	mlx_delete_texture(data->exit[0]);
 	mlx_delete_texture(data->exit[1]);
 	mlx_delete_image(data->mlx, data->exit_img[0]);
 	mlx_delete_image(data->mlx, data->exit_img[1]);
+	while (cnt < 4)
+	{
+		mlx_delete_texture(data->stats[cnt]);
+		mlx_delete_image(data->mlx, data->stats_img[cnt]);
+		cnt++;
+	}
 }

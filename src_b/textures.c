@@ -6,11 +6,11 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:17:17 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/01 13:28:47 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/01 19:12:01 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../so_long_bonus.h"
 
 mlx_texture_t	*wall_texture(int cnt)
 {
@@ -48,7 +48,9 @@ void	init_textures(t_data *data, int cnt)
 	data->ground_img = mlx_texture_to_image(data->mlx, data->ground);
 	data->coins = mlx_load_png("./textures/coins/coin.png");
 	data->coins_img = mlx_texture_to_image(data->mlx, data->coins);
+	init_stats_textures(data);
 	player_textures(data);
+	
 }
 
 void	player_textures(t_data *data)

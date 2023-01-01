@@ -6,11 +6,11 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 14:19:26 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/01 13:31:10 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/01 16:02:21 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../so_long_bonus.h"
 
 int	calculate_width(char *name)
 {

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 10:11:52 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/01 16:03:25 by kvebers          ###   ########.fr       */
+/*   Created: 2023/01/01 16:00:31 by kvebers           #+#    #+#             */
+/*   Updated: 2023/01/01 19:36:08 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_BONUS_H
-# define SO_LONG_BONUS_H
+#ifndef SO_LONG_H
+# define SO_LONG_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -40,11 +40,14 @@ typedef struct data
 	mlx_texture_t	*player[15];
 	mlx_texture_t	*exit[2];
 	mlx_texture_t	*coins;
+	mlx_texture_t	*stats[4];
 	mlx_image_t		*coins_img;
 	mlx_image_t		*ground_img;
 	mlx_image_t		*wall_img[28];
 	mlx_image_t		*exit_img[2];
 	mlx_image_t		*temp_img;
+	mlx_image_t		*stats_img[4];
+	mlx_image_t		*temp_stats[4];
 }	t_data;
 
 typedef struct check
@@ -75,7 +78,7 @@ void			init_player(t_data *data);
 //Keyhooks
 void			keyhook(mlx_key_data_t key_data, void *param);
 void			update_player(void *param);
-void			count_frames(void *param);
+
 //key.c
 void			pressed_w(t_data *data);
 void			pressed_s(t_data *data);
@@ -101,4 +104,8 @@ void			free_data_textures(t_data *data);
 void			free_data(t_data *data);
 //start.c
 void			start_game(t_data *data);
+//point_counter.c
+void			init_stats_textures(t_data *data);
+void			init_stats(t_data *data);
+void			long_line(t_data *data, int x, int y);
 #endif

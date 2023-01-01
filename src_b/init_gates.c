@@ -6,11 +6,11 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 08:10:03 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/01 12:37:45 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/01 16:01:49 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../so_long_bonus.h"
 
 void	init_coins(t_data *d)
 {

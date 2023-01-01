@@ -6,11 +6,11 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:50:33 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/01 13:23:06 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/01 16:02:06 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../so_long_bonus.h"
 
 int	protection(char *argv)
 {

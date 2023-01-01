@@ -6,11 +6,11 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 19:16:59 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/01 15:48:53 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/01 18:35:47 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../so_long_bonus.h"
 
 mlx_image_t	*oof(t_data *data, int cnt)
 {
@@ -77,7 +77,7 @@ int	init_game(char *argv)
 	d->height = calculate_height(d->name);
 	d->x = init_x(d->width, d->map);
 	d->y = init_y(d->width, d->map);
-	d->mlx = mlx_init((d->width -1) * 60, d->height * 84, "NabJokes", false);
+	d->mlx = mlx_init((d->width + 4) * 60, d->height * 84, "NabJokes", false);
 	d->frames = 0;
 	d->turn_counter = 0;
 	init_textures(d, 0);

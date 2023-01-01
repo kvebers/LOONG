@@ -6,11 +6,11 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 18:17:20 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/01 13:25:05 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/01 16:02:10 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../so_long_bonus.h"
 
 int	check_rec(t_check *data, int cnt)
 {
