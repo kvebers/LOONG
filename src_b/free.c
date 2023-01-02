@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 15:18:07 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/01 19:16:20 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/02 16:37:26 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,15 @@ void	free_data(t_data *data)
 	mlx_delete_texture(data->exit[1]);
 	mlx_delete_image(data->mlx, data->exit_img[0]);
 	mlx_delete_image(data->mlx, data->exit_img[1]);
-	while (cnt < 4)
+	while (cnt < 10)
 	{
-		mlx_delete_texture(data->stats[cnt]);
-		mlx_delete_image(data->mlx, data->stats_img[cnt]);
+		if (cnt < 3)
+		{
+			mlx_delete_texture(data->stats[cnt]);
+			mlx_delete_image(data->mlx, data->stats_img[cnt]);	
+		}
+		mlx_delete_texture(data->points[cnt]);
+		mlx_delete_image(data->mlx, data->p_i[cnt]);	
 		cnt++;
 	}
 }

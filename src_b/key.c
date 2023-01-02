@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 12:42:34 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/01 18:32:16 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/02 19:22:20 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ void	pressed_w(t_data *data)
 		check_win(data, data->x, data->y - 1);
 		data -> y = data -> y - 1;
 		data->turn_counter++;
+		data->ani = 13;
+		data->y_off = 84;
+		stats_algo(data);
 	}
 }
 
@@ -39,6 +42,9 @@ void	pressed_s(t_data *data)
 		check_win(data, data->x, data->y + 1);
 		data -> y = data -> y + 1;
 		data->turn_counter++;
+		data->ani = 13;
+		data->y_off = -84;
+		stats_algo(data);
 	}
 }
 
@@ -54,6 +60,9 @@ void	pressed_d(t_data *data)
 		check_win(data, data->x + 1, data->y);
 		data -> x = data -> x + 1;
 		data->turn_counter++;
+		data->ani = 13;
+		data->x_off = -60;
+		stats_algo(data);
 	}
 }
 
@@ -69,6 +78,9 @@ void	pressed_a(t_data *data)
 		check_win(data, data->x - 1, data->y);
 		data -> x = data -> x - 1;
 		data->turn_counter++;
+		data->ani = 13;
+		data->x_off = 60;
+		stats_algo(data);
 	}
 }
 

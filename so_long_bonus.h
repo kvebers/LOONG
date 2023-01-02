@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 16:00:31 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/01 19:36:08 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/02 19:13:53 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,15 @@ typedef struct data
 	int				turns;
 	int				value;
 	int				frames;
+	int				ani;
+	int				y_off;
+	int				x_off;
 	mlx_texture_t	*ground;
 	mlx_texture_t	*wall[26];
 	mlx_texture_t	*enemy[10];
 	mlx_texture_t	*player[15];
 	mlx_texture_t	*exit[2];
+	mlx_texture_t	*points[10];
 	mlx_texture_t	*coins;
 	mlx_texture_t	*stats[4];
 	mlx_image_t		*coins_img;
@@ -47,7 +51,7 @@ typedef struct data
 	mlx_image_t		*exit_img[2];
 	mlx_image_t		*temp_img;
 	mlx_image_t		*stats_img[4];
-	mlx_image_t		*temp_stats[4];
+	mlx_image_t		*p_i[5];
 }	t_data;
 
 typedef struct check
@@ -78,6 +82,7 @@ void			init_player(t_data *data);
 //Keyhooks
 void			keyhook(mlx_key_data_t key_data, void *param);
 void			update_player(void *param);
+void			count_frames(void *param);
 
 //key.c
 void			pressed_w(t_data *data);
@@ -108,4 +113,10 @@ void			start_game(t_data *data);
 void			init_stats_textures(t_data *data);
 void			init_stats(t_data *data);
 void			long_line(t_data *data, int x, int y);
+void			long_line_2 (t_data *d, int x, int y);
+void			long_line_1 (t_data *d, int x);
+// stats_algo.c
+void    		stats_algo(t_data *d);
+//ani_algo.c
+void    		ani_algo(t_data *data);
 #endif

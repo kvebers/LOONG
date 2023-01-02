@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 19:16:59 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/01 18:35:47 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/02 19:03:55 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,9 @@ int	init_game(char *argv)
 	d->y = init_y(d->width, d->map);
 	d->mlx = mlx_init((d->width + 4) * 60, d->height * 84, "NabJokes", false);
 	d->frames = 0;
+	d->ani = 0;
+	d->x_off = 0;
+	d->y_off = 0;
 	d->turn_counter = 0;
 	init_textures(d, 0);
 	start_game(d);

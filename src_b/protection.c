@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:50:33 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/01 16:02:06 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/02 17:08:48 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ int	check_chars(t_check *data)
 	int		cnt;
 	char	*allowed;
 
-	allowed = malloc(sizeof(char) * 7);
-	ft_strlcpy(allowed, "\nP01EC", 7);
+	allowed = malloc(sizeof(char) * 8);
+	ft_strlcpy(allowed, "\nP01ECN", 8);
 	cnt = 0;
 	while (data->map[cnt] != '\0')
 	{

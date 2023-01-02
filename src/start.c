@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 10:42:20 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/01 13:27:00 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/02 18:48:12 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 		if (protection(argv[1]) == 1)
 			init_game(argv[1]);
 	}
-	system("leaks so_long");
+	system("leaks so_long_bonus");
 	return (0);
 }
 
