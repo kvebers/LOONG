@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 16:00:31 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/02 19:13:53 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/03 18:35:45 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct data
 {
 	mlx_t			*mlx;
 	char			*name;
+	int				game_state;
 	int				width;
 	int				height;
 	char			*map;
@@ -35,8 +36,10 @@ typedef struct data
 	int				value;
 	int				frames;
 	int				ani;
+	int				ani_spr;
 	int				y_off;
 	int				x_off;
+	int				fra;
 	mlx_texture_t	*ground;
 	mlx_texture_t	*wall[26];
 	mlx_texture_t	*enemy[10];
@@ -46,6 +49,7 @@ typedef struct data
 	mlx_texture_t	*coins;
 	mlx_texture_t	*stats[4];
 	mlx_image_t		*coins_img;
+	mlx_image_t		*e_img[10];
 	mlx_image_t		*ground_img;
 	mlx_image_t		*wall_img[28];
 	mlx_image_t		*exit_img[2];
@@ -72,11 +76,12 @@ int				init_x(int width, char *map);
 //textures.c
 void			init_textures(t_data *data, int cnt);
 mlx_texture_t	*wall_texture(int cnt);
+mlx_image_t	*wall_img(mlx_t *mlx, mlx_texture_t *texture);
 void			player_textures(t_data *data);
 //init.c
 void			init_map(t_data *data, int cnt, int x, int y);
 int				init_game(char *argv);
-mlx_image_t		*oof(t_data *data, int cnt);
+mlx_image_t		*of(t_data *data, int cnt);
 char			*create_name(char *name);
 void			init_player(t_data *data);
 //Keyhooks
@@ -119,4 +124,12 @@ void			long_line_1 (t_data *d, int x);
 void    		stats_algo(t_data *d);
 //ani_algo.c
 void    		ani_algo(t_data *data);
+void			ani_predictor(t_data *data);
+//change_map.c
+void			change_map(t_data *d, int c, int x, int y);
+void			init2(t_data *d);
+//enemy.c
+void    		render_holes (t_data *d);
+void			init_enemys_textures (t_data *data);
+void			check_lose(t_data *data, int x, int y);
 #endif

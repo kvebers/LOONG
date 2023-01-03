@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 08:10:03 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/01 16:01:49 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/03 18:38:07 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ void	check_win(t_data *data, int x, int y)
 	if (data->value == 0)
 	{
 		if (data->map[y * data->width + x] == 'E')
-			mlx_close_window(data->mlx);
+			data->game_state = 1;
 	}
 }

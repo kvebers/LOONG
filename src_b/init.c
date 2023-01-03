@@ -6,13 +6,13 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 19:16:59 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/02 19:03:55 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/03 17:38:26 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long_bonus.h"
 
-mlx_image_t	*oof(t_data *data, int cnt)
+mlx_image_t	*of(t_data *data, int cnt)
 {
 	return (data->wall_img[(cnt * 11001 + 12345) % 26]);
 }
@@ -31,7 +31,10 @@ void	init_map(t_data *d, int cnt, int x, int y)
 		while (x < d->width)
 		{
 			if (d->map[cnt] == '1')
-				mlx_image_to_window(d->mlx, oof(d, cnt), x * 60, y * 84);
+			{
+				mlx_image_to_window(d->mlx, d->ground_img, x * 60, y * 84);
+				mlx_image_to_window(d->mlx, of(d, cnt), x * 60, y * 84);
+			}
 			else if (d->map[cnt] == '\n' || d->map[cnt] == 'E')
 			{
 			}
@@ -78,11 +81,14 @@ int	init_game(char *argv)
 	d->x = init_x(d->width, d->map);
 	d->y = init_y(d->width, d->map);
 	d->mlx = mlx_init((d->width + 4) * 60, d->height * 84, "NabJokes", false);
-	d->frames = 0;
-	d->ani = 0;
-	d->x_off = 0;
-	d->y_off = 0;
-	d->turn_counter = 0;
+	// d->frames = 0;
+	// d->ani_spr = 0;
+	// d->ani = 0;
+	// d->x_off = 0;
+	// d->y_off = 0;
+	// d->fra = 0;
+	// d->turn_counter = 0;
+	init2(d);
 	init_textures(d, 0);
 	start_game(d);
 	free_data_textures(d);

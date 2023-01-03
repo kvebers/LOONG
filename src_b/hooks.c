@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 11:08:52 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/02 19:13:34 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/03 17:25:37 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	update_player(void *param)
 
 	d = (t_data *)param;
 	mlx_delete_image(d->mlx, d->temp_img);
-	d->temp_img = mlx_texture_to_image(d->mlx, d->player[0]);
+	d->temp_img = mlx_texture_to_image(d->mlx, d->player[d->ani_spr]);
 	ani_algo(d);
 	mlx_image_to_window(d->mlx, d->temp_img, d->x * 60 + d->x_off + 15, d->y * 84 + d->y_off + 30);
 }
@@ -29,8 +29,14 @@ void	count_frames(void *param)
 
 	d = (t_data *)param;
 	d->frames++;
-	if (d->frames > 5000)
+	d->fra++;
+	if (d->fra > 5000)
+	{
 		d->frames = 0;
+		d->fra = 0;
+	}
+	if (d->fra % 97 == 0)
+		change_map(d, 0, 0, 0);		
 }
 
 void	keyhook(mlx_key_data_t key_data, void *param)

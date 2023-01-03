@@ -6,7 +6,7 @@
 #    By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 14:35:46 by kvebers           #+#    #+#              #
-#    Updated: 2023/01/02 18:32:51 by kvebers          ###   ########.fr        #
+#    Updated: 2023/01/03 17:39:50 by kvebers          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,8 @@ FILES	= src/start.c src/utils.c src/textures.c src/free.c src/init.c \
 B_FILES = src_b/start.c src_b/utils.c src_b/textures.c src_b/free.c \
 		src_b/init.c src_b/hooks.c src_b/key.c src_b/init_gates.c \
 		src_b/protection.c src_b/protection2.c src_b/stats.c \
-		src_b/stats_algo.c src_b/ani_algo.c
-LFLAGS	=	-L ./mlx -lmlx
+		src_b/stats_algo.c src_b/ani_algo.c src_b/change_map.c \
+		src_b/enemy.c
 RM = 		rm -f
 OBJ	= $(FILES:%.c=%.o)
 B_OBJ	= $(B_FILES:%.c=%.o)
