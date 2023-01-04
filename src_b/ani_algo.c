@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 18:29:44 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/03 18:39:29 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/04 17:19:11 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ void	ani_predictor(t_data *data)
 		data->ani_spr = data->ani % 2 + 2;
 	else if (data->frames > 50 && data->ani == 0)
 		data->ani_spr = data->frames % 5 + 10;
-	if (data->ani == 5)
+	if (data->ani == 9)
 		render_holes(data);
-	if (data->ani == 6)
+	if (data->ani == 10)
 		render_holes(data);
 	if (data->game_state != 0 && data->ani == 3)
 		mlx_close_window(data->mlx);

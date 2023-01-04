@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 15:22:59 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/04 13:04:36 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/04 19:15:19 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	change_map(t_data *d, int c, int x, int y)
 		}
 		y++;
 	}
+	if (d->life != 3)
+		spawn_blood_screen(d);
 }
 
 void	init2(t_data *d)
@@ -46,4 +48,5 @@ void	init2(t_data *d)
 	d->turn_counter = 0;
 	d->game_state = 0;
 	d->blood_state = 0;
+	d->life = 3;
 }

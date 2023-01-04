@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 16:00:31 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/04 13:30:53 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/04 19:26:06 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,12 @@ typedef struct data
 	int				ani_spr;
 	int				y_off;
 	int				x_off;
+	int				life;
 	int				fra;
 	int				blood_state;
 	mlx_texture_t	*ground;
-	mlx_texture_t	*blood_t;
+	mlx_texture_t	*blood_t[2];
+	mlx_texture_t	*health;
 	mlx_texture_t	*wall[26];
 	mlx_texture_t	*enemy[13];
 	mlx_texture_t	*player[15];
@@ -51,8 +53,10 @@ typedef struct data
 	mlx_texture_t	*coins;
 	mlx_texture_t	*stats[4];
 	mlx_image_t		*coins_img;
-	mlx_image_t		*blood_img[5];
-	mlx_image_t		*e_img[3];
+	mlx_image_t		*blood_img[11];
+	mlx_image_t		*e_img[2];
+	mlx_image_t		*health_i;
+	mlx_image_t		*e_img2[2];
 	mlx_image_t		*e_death_img;
 	mlx_image_t		*ground_img;
 	mlx_image_t		*wall_img[28];
@@ -92,7 +96,7 @@ void			init_player(t_data *data);
 void			keyhook(mlx_key_data_t key_data, void *param);
 void			update_player(void *param);
 void			count_frames(void *param);
-
+void			enemy_hook(void *param);
 //key.c
 void			pressed_w(t_data *data);
 void			pressed_s(t_data *data);
@@ -116,6 +120,7 @@ int				check_path_setup(t_check *data);
 //free.c
 void			free_data_textures(t_data *data);
 void			free_data(t_data *data);
+void			free_data1(t_data *data);
 //start.c
 void			start_game(t_data *data);
 //point_counter.c
@@ -126,6 +131,8 @@ void			long_line_2 (t_data *d, int x, int y);
 void			long_line_1 (t_data *d, int x);
 // stats_algo.c
 void    		stats_algo(t_data *d);
+void    		health_algo(t_data *d);
+void    		spawn_blood_screen(t_data *d);
 //ani_algo.c
 void    		ani_algo(t_data *data);
 void			ani_predictor(t_data *data);
@@ -136,4 +143,8 @@ void			init2(t_data *d);
 void    		render_holes (t_data *d);
 void			init_enemys_textures (t_data *data);
 void			check_lose(t_data *data, int x, int y);
+void			render_enemys(t_data *d, int add);
+void			init_blood(t_data *data);
+// kill_enemys.c
+void   			blood_screen(t_data *data);
 #endif

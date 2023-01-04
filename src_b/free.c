@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 15:18:07 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/02 16:37:26 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/04 19:23:39 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,28 @@ void	free_data_textures(t_data *data)
 	if (data->coins_img != NULL)
 		mlx_delete_image(data->mlx, data->coins_img);
 	free_data(data);
+	free_data1(data);
 	free(data->map);
 	free(data->name);
 	mlx_terminate(data->mlx);
 	free(data);
+}
+
+void	free_data1(t_data *data)
+{
+	int cnt;
+	
+	mlx_delete_texture(data->blood_t[0]);
+	mlx_delete_texture(data->blood_t[1]);
+	cnt = 0;
+	while (cnt < 13)
+	{
+		mlx_delete_texture(data->enemy[cnt]);
+		cnt++;
+	}
+	mlx_delete_texture(data->health);
+	mlx_delete_image(data->mlx, data->health_i);
+	mlx_delete_image(data->mlx, data->blood_img[10]);
 }
 
 void	free_data(t_data *data)

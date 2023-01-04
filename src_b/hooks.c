@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 11:08:52 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/04 13:26:08 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/04 18:02:24 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,19 @@
 void	update_player(void *param)
 {
 	t_data	*d;
+	int		x;
+	int		y;
 
 	d = (t_data *)param;
-	mlx_delete_image(d->mlx, d->temp_img);
-	d->temp_img = mlx_texture_to_image(d->mlx, d->player[d->ani_spr]);
-	ani_algo(d);
-	mlx_image_to_window(d->mlx, d->temp_img, d->x * 60 + d->x_off + 15, d->y * 84 + d->y_off + 30);
+	if (d->blood_state < 1)
+	{
+		mlx_delete_image(d->mlx, d->temp_img);
+		d->temp_img = mlx_texture_to_image(d->mlx, d->player[d->ani_spr]);
+		ani_algo(d);
+		x = d->x * 60 + d->x_off + 15;
+			y = d->y * 84 + d->y_off + 30;
+		mlx_image_to_window(d->mlx, d->temp_img, x, y);
+	}
 }
 
 void	count_frames(void *param)
@@ -35,8 +42,19 @@ void	count_frames(void *param)
 		d->frames = 0;
 		d->fra = 0;
 	}
-	if (d->fra % 97 == 0)
+	if (d->fra % 499 == 0 && d->blood_state < 1)
 		change_map(d, 0, 0, 0);
+	if (d->blood_state > 0)
+		blood_screen(d);
+}
+
+void	enemy_hook(void *param)
+{
+ 	t_data	*d;
+
+	d = (t_data *)param;
+	if (d->fra % 3 == 0 && d->blood_state == 0)	
+		render_enemys(d, 1);
 }
 
 void	keyhook(mlx_key_data_t key_data, void *param)
@@ -44,7 +62,7 @@ void	keyhook(mlx_key_data_t key_data, void *param)
 	t_data	*data;
 
 	data = (t_data *)param;
-	if (data->ani == 0)
+	if (data->ani == 0 && data->blood_state == 0)
 	{
 		if (key_data.key == MLX_KEY_W && key_data.action == MLX_PRESS)
 			pressed_w(data);
