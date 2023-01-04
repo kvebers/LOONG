@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 11:08:52 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/03 17:25:37 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/04 13:26:08 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	count_frames(void *param)
 		d->fra = 0;
 	}
 	if (d->fra % 97 == 0)
-		change_map(d, 0, 0, 0);		
+		change_map(d, 0, 0, 0);
 }
 
 void	keyhook(mlx_key_data_t key_data, void *param)

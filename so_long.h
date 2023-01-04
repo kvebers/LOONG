@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:11:52 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/02 18:31:13 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/04 13:26:46 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ typedef struct data
 	int				frames;
 	mlx_texture_t	*ground;
 	mlx_texture_t	*wall[26];
-	mlx_texture_t	*enemy[10];
 	mlx_texture_t	*player[15];
 	mlx_texture_t	*exit[2];
 	mlx_texture_t	*coins;

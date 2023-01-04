@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 15:22:59 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/03 18:38:26 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/04 13:04:36 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,5 @@ void	init2(t_data *d)
 	d->fra = 0;
 	d->turn_counter = 0;
 	d->game_state = 0;
+	d->blood_state = 0;
 }

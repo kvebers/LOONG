@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 16:00:31 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/03 18:35:45 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/04 13:30:53 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,20 @@ typedef struct data
 	int				y_off;
 	int				x_off;
 	int				fra;
+	int				blood_state;
 	mlx_texture_t	*ground;
+	mlx_texture_t	*blood_t;
 	mlx_texture_t	*wall[26];
-	mlx_texture_t	*enemy[10];
+	mlx_texture_t	*enemy[13];
 	mlx_texture_t	*player[15];
 	mlx_texture_t	*exit[2];
 	mlx_texture_t	*points[10];
 	mlx_texture_t	*coins;
 	mlx_texture_t	*stats[4];
 	mlx_image_t		*coins_img;
-	mlx_image_t		*e_img[10];
+	mlx_image_t		*blood_img[5];
+	mlx_image_t		*e_img[3];
+	mlx_image_t		*e_death_img;
 	mlx_image_t		*ground_img;
 	mlx_image_t		*wall_img[28];
 	mlx_image_t		*exit_img[2];
@@ -57,7 +61,7 @@ typedef struct data
 	mlx_image_t		*stats_img[4];
 	mlx_image_t		*p_i[5];
 }	t_data;
-
+                             
 typedef struct check
 {
 	char	*name;
