@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 15:22:59 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/04 19:15:19 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/05 13:32:53 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,15 @@ void	change_map(t_data *d, int c, int x, int y)
 		while (x < d->width)
 		{
 			if (d->map[c] == '1')
+			{
 				mlx_image_to_window(d->mlx, of(d, d->fra + c), x * 60, y * 84);
+			}
 			x++;
 			c++;
 		}
 		y++;
 	}
-	if (d->life != 3)
+	if (d->life != 5)
 		spawn_blood_screen(d);
 }
 
@@ -48,5 +50,6 @@ void	init2(t_data *d)
 	d->turn_counter = 0;
 	d->game_state = 0;
 	d->blood_state = 0;
-	d->life = 3;
+	d->life = 5;
+	d->enemy_count = 0;
 }

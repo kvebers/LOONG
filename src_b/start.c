@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 10:42:20 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/04 18:37:09 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/05 08:32:51 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ void	start_game(t_data *data)
 	render_enemys(data, 0);
 	update_gates(data);
 	init_player(data);
+	mlx_loop_hook(data->mlx, &update_player, data);
 	mlx_loop_hook(data->mlx, &count_frames, data);
 	mlx_key_hook(data->mlx, &keyhook, data);
-	mlx_loop_hook(data->mlx, &update_player, data);
-	mlx_loop_hook(data->mlx, &enemy_hook, data);
 	mlx_loop(data->mlx);
 }
 

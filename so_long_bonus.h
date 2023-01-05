@@ -6,12 +6,12 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 16:00:31 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/04 19:26:06 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/05 11:24:34 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -35,6 +35,7 @@ typedef struct data
 	int				turns;
 	int				value;
 	int				frames;
+	int				enemy_count;
 	int				ani;
 	int				ani_spr;
 	int				y_off;
@@ -56,7 +57,7 @@ typedef struct data
 	mlx_image_t		*blood_img[11];
 	mlx_image_t		*e_img[2];
 	mlx_image_t		*health_i;
-	mlx_image_t		*e_img2[2];
+	mlx_image_t		*e_img2[11];
 	mlx_image_t		*e_death_img;
 	mlx_image_t		*ground_img;
 	mlx_image_t		*wall_img[28];
@@ -65,7 +66,6 @@ typedef struct data
 	mlx_image_t		*stats_img[4];
 	mlx_image_t		*p_i[5];
 }	t_data;
-                             
 typedef struct check
 {
 	char	*name;
@@ -84,7 +84,7 @@ int				init_x(int width, char *map);
 //textures.c
 void			init_textures(t_data *data, int cnt);
 mlx_texture_t	*wall_texture(int cnt);
-mlx_image_t	*wall_img(mlx_t *mlx, mlx_texture_t *texture);
+mlx_image_t		*wall_img(mlx_t *mlx, mlx_texture_t *texture);
 void			player_textures(t_data *data);
 //init.c
 void			init_map(t_data *data, int cnt, int x, int y);
@@ -96,7 +96,6 @@ void			init_player(t_data *data);
 void			keyhook(mlx_key_data_t key_data, void *param);
 void			update_player(void *param);
 void			count_frames(void *param);
-void			enemy_hook(void *param);
 //key.c
 void			pressed_w(t_data *data);
 void			pressed_s(t_data *data);
@@ -127,24 +126,36 @@ void			start_game(t_data *data);
 void			init_stats_textures(t_data *data);
 void			init_stats(t_data *data);
 void			long_line(t_data *data, int x, int y);
-void			long_line_2 (t_data *d, int x, int y);
-void			long_line_1 (t_data *d, int x);
+void			long_line_2(t_data *d, int x, int y);
+void			long_line_1(t_data *d, int x);
 // stats_algo.c
-void    		stats_algo(t_data *d);
-void    		health_algo(t_data *d);
-void    		spawn_blood_screen(t_data *d);
+void			stats_algo(t_data *d);
+void			health_algo(t_data *d);
+void			spawn_blood_screen(t_data *d);
 //ani_algo.c
-void    		ani_algo(t_data *data);
+void			ani_algo(t_data *data);
 void			ani_predictor(t_data *data);
 //change_map.c
 void			change_map(t_data *d, int c, int x, int y);
 void			init2(t_data *d);
 //enemy.c
-void    		render_holes (t_data *d);
-void			init_enemys_textures (t_data *data);
+void			render_holes (t_data *d);
+void			init_enemys_textures(t_data *data);
 void			check_lose(t_data *data, int x, int y);
 void			render_enemys(t_data *d, int add);
-void			init_blood(t_data *data);
 // kill_enemys.c
-void   			blood_screen(t_data *data);
+void			blood_screen(t_data *data);
+void			init_blood(t_data *data);
+void			clear_blood(t_data *d, int b);
+void			blood_screen(t_data *data);
+//move_enemys.c
+void			check_enemy_state(t_data *d);
+void			render_enemys1(t_data *d, int add, int c);
+void			count_enemys(t_data *d, int former, int future);
+void			check_enemy_state1(t_data *d);
+void			check_enemy_state_2(t_data *d);
+//move_enemys2.c
+void			check_enemy_state_3(t_data *d);
+void			generate_enemys(t_data *d);
+int				count_tiles(t_data *d);
 #endif

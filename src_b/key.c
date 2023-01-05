@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 12:42:34 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/03 18:34:51 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/05 08:54:34 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ void	pressed_a(t_data *data)
 
 void	render_coins(t_data *data)
 {
+	system("say hehe-hee &");
 	mlx_delete_image(data->mlx, data->coins_img);
 	data->coins_img = mlx_texture_to_image(data->mlx, data->coins);
 	init_coins(data);

@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 15:17:17 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/03 17:41:45 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/05 13:38:06 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	init_textures(t_data *data, int cnt)
 		data -> wall_img[cnt - 1] = wall_img(data->mlx, data->wall[cnt - 1]);
 	}
 	cnt = 0;
+	data->wall_img[26] = mlx_texture_to_image(data->mlx, data->wall[1]);
 	data->ground = mlx_load_png("./textures/walls/basic.png");
 	data->ground_img = mlx_texture_to_image(data->mlx, data->ground);
 	data->coins = mlx_load_png("./textures/coins/coin.png");
@@ -51,7 +52,6 @@ void	init_textures(t_data *data, int cnt)
 	init_enemys_textures(data);
 	init_stats_textures(data);
 	player_textures(data);
-	
 }
 
 void	player_textures(t_data *data)

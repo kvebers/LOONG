@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 19:16:59 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/04 11:40:48 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/05 13:34:35 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	init_map(t_data *d, int cnt, int x, int y)
 		{
 			if (d->map[cnt] == '1')
 			{
-				mlx_image_to_window(d->mlx, d->ground_img, x * 60, y * 84);
+				mlx_image_to_window(d->mlx, d->wall_img[26], x * 60, y * 84);
 				mlx_image_to_window(d->mlx, of(d, cnt), x * 60, y * 84);
 			}
 			else if (d->map[cnt] == '\n' || d->map[cnt] == 'E')

@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 16:11:33 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/04 19:26:48 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/05 10:13:25 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void    health_algo(t_data *d)
         mlx_image_to_window(d->mlx, d->health_i, (w + cnt) * 60, 2 * 84);
         cnt++;
     }
-    if (d->life != 3)
+    if (d->life != 5)
         spawn_blood_screen(d);
 }
 

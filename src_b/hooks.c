@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 11:08:52 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/04 18:02:24 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/05 08:42:30 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,25 +36,17 @@ void	count_frames(void *param)
 
 	d = (t_data *)param;
 	d->frames++;
-	d->fra++;
+	if (d->blood_state < 1)
+		d->fra++;
 	if (d->fra > 5000)
 	{
 		d->frames = 0;
 		d->fra = 0;
 	}
-	if (d->fra % 499 == 0 && d->blood_state < 1)
-		change_map(d, 0, 0, 0);
+	if (d->blood_state < 1)
+		check_enemy_state(d);
 	if (d->blood_state > 0)
 		blood_screen(d);
-}
-
-void	enemy_hook(void *param)
-{
- 	t_data	*d;
-
-	d = (t_data *)param;
-	if (d->fra % 3 == 0 && d->blood_state == 0)	
-		render_enemys(d, 1);
 }
 
 void	keyhook(mlx_key_data_t key_data, void *param)
@@ -73,6 +65,6 @@ void	keyhook(mlx_key_data_t key_data, void *param)
 		else if (key_data.key == MLX_KEY_A && key_data.action == MLX_PRESS)
 			pressed_a(data);
 	}
-		if (key_data.key == MLX_KEY_ESCAPE && key_data.action == MLX_PRESS)
-			mlx_close_window(data->mlx);
+	if (key_data.key == MLX_KEY_ESCAPE && key_data.action == MLX_PRESS)
+		mlx_close_window(data->mlx);
 }
