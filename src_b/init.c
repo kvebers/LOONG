@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 19:16:59 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/05 13:34:35 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/05 17:19:12 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ char	*create_name(char *name)
 int	init_game(char *argv)
 {
 	t_data	*d;
+	int		game_state;
 
 	d = malloc(sizeof(t_data));
 	if (d == NULL)
@@ -84,6 +85,8 @@ int	init_game(char *argv)
 	init2(d);
 	init_textures(d, 0);
 	start_game(d);
+	game_state = d->game_state;
 	free_data_textures(d);
+	play_endscreen(game_state);
 	return (0);
 }

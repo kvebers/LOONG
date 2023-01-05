@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 15:18:07 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/05 09:41:13 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/05 17:19:32 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	free_data1(t_data *data)
 
 void	free_data(t_data *data)
 {
-	int cnt;
+	int	cnt;
 
 	cnt = 0;
 	mlx_delete_texture(data->exit[0]);
@@ -70,7 +70,7 @@ void	free_data(t_data *data)
 		if (cnt < 3)
 		{
 			mlx_delete_texture(data->stats[cnt]);
-			mlx_delete_image(data->mlx, data->stats_img[cnt]);	
+			mlx_delete_image(data->mlx, data->stats_img[cnt]);
 		}
 		mlx_delete_texture(data->points[cnt]);
 		mlx_delete_image(data->mlx, data->p_i[cnt]);

@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 16:00:31 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/05 11:24:34 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/05 16:44:04 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ typedef struct data
 	mlx_image_t		*stats_img[4];
 	mlx_image_t		*p_i[5];
 }	t_data;
+
 typedef struct check
 {
 	char	*name;
@@ -75,6 +76,16 @@ typedef struct check
 	int		x;
 	int		y;
 }	t_check;
+
+typedef struct miniani
+{
+	mlx_texture_t	*ani[3];
+	mlx_image_t		*ani_i;
+	mlx_t			*mlx;
+	int				game_state;
+	int				frames;
+}	t_miniani;
+
 //Utills.c
 int				calculate_width(char *name);
 int				calculate_height(char *name);
@@ -96,6 +107,7 @@ void			init_player(t_data *data);
 void			keyhook(mlx_key_data_t key_data, void *param);
 void			update_player(void *param);
 void			count_frames(void *param);
+void			keyhook1(mlx_key_data_t key_data, void *param);
 //key.c
 void			pressed_w(t_data *data);
 void			pressed_s(t_data *data);
@@ -139,7 +151,7 @@ void			ani_predictor(t_data *data);
 void			change_map(t_data *d, int c, int x, int y);
 void			init2(t_data *d);
 //enemy.c
-void			render_holes (t_data *d);
+void			render_holes(t_data *d);
 void			init_enemys_textures(t_data *data);
 void			check_lose(t_data *data, int x, int y);
 void			render_enemys(t_data *d, int add);
@@ -158,4 +170,12 @@ void			check_enemy_state_2(t_data *d);
 void			check_enemy_state_3(t_data *d);
 void			generate_enemys(t_data *d);
 int				count_tiles(t_data *d);
+//play_endscreen.c
+void			play_win(t_miniani *data);
+void			play_explosion(t_miniani *data);
+void			play_killed(t_miniani *data);
+void			play_void(t_miniani *data);
+void			play_endscreen(int game_state);
+//end_screen_hooks.c
+void			count_frames1(void *param);
 #endif

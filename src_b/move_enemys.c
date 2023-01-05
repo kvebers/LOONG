@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 06:28:47 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/05 13:20:14 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/05 17:16:40 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	check_enemy_state(t_data *d)
 {
 	if (d->fra % 700 == 0 || d->fra % 700 == 2)
 		render_enemys(d, 0);
-	if (d->fra % 3 == 0 && d->fra % 700 < 650)	
+	if (d->fra % 3 == 0 && d->fra % 700 < 650)
 		render_enemys(d, 1);
 	if (d->fra % 700 > 550 && d->fra % 7 == 0 && d->fra % 700 < 650)
 		change_map(d, 0, 0, 0);

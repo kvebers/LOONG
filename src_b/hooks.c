@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 11:08:52 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/05 08:42:30 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/05 15:25:07 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,13 @@ void	keyhook(mlx_key_data_t key_data, void *param)
 	}
 	if (key_data.key == MLX_KEY_ESCAPE && key_data.action == MLX_PRESS)
 		mlx_close_window(data->mlx);
+}
+
+void	keyhook1(mlx_key_data_t key_data, void *param)
+{
+	mlx_t	*mlx;
+
+	mlx = (mlx_t *)param;
+	if (key_data.key == MLX_KEY_ESCAPE && key_data.action == MLX_PRESS)
+		mlx_close_window(mlx);
 }

@@ -6,7 +6,7 @@
 /*   By: kvebers <kvebers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 18:29:44 by kvebers           #+#    #+#             */
-/*   Updated: 2023/01/04 17:19:11 by kvebers          ###   ########.fr       */
+/*   Updated: 2023/01/05 17:17:41 by kvebers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ void	ani_algo(t_data *data)
 		data->x_off = data->x_off + 5;
 	else if (data->x_off > 0)
 		data->x_off = data->x_off - 5;
-	else 
+	else
 		data->x_off = 0;
 	if (data->y_off < 0)
 		data->y_off = data->y_off + 7;
 	else if (data->y_off > 0)
 		data->y_off = data->y_off - 7;
-	else 
+	else
 		data->y_off = 0;
 	if (data -> ani == 1)
 		data->frames = 0;
