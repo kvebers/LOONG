@@ -4,4 +4,4 @@
 ### Video:
 [![So_long Game(https://user-images.githubusercontent.com/49612380/235704592-21a76d2d-70eb-4bf7-abc5-de3fdf7f303c.jpg)](https://youtu.be/2IhYhJnCBO8)
 
-[![Fibonacci RMI Java EE](https://user-images.githubusercontent.com/49612380/235704592-21a76d2d-70eb-4bf7-abc5-de3fdf7f303c.jpg)](https://youtu.be/2IhYhJnCBO8 "RMI Fibonacci Java")
+[![LONG Game](https://user-images.githubusercontent.com/49612380/235704592-21a76d2d-70eb-4bf7-abc5-de3fdf7f303c.jpg)](https://youtu.be/2IhYhJnCBO8 "LONG")
