@@ -3,7 +3,7 @@
 
 ### Video:
 <div align="center">
-  <a href="https://youtu.be/2IhYhJnCBO8">
-    <img src="https://github.com/kvebers/LOONG/assets/49612380/acb52b5e-519f-4083-823e-bbd4dcd44bd0" alt="LONG Game">
-  </a>
+
+  [![LONG Game](https://github.com/kvebers/LOONG/assets/49612380/6fedced1-12f9-42d6-a98b-0bef3e7c6dce)](https://youtu.be/2IhYhJnCBO8 "LONG")
+
 </div>
