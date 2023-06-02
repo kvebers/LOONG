@@ -4,6 +4,7 @@
 ### Video:
 <div align="center">
 
-  [![LONG Game](https://github.com/kvebers/LOONG/assets/49612380/6fedced1-12f9-42d6-a98b-0bef3e7c6dce)](https://youtu.be/2IhYhJnCBO8 "LONG")
+  [![LONG Game](https://github.com/kvebers/LOONG/assets/49612380/6fedced1-12f9-42d6-a98b-0bef3e7c6dce)
+  https://youtu.be/2IhYhJnCBO8
 
 </div>
