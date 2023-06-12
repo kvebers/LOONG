@@ -1,5 +1,5 @@
 # So_LONG
-## This is my implementation of so_long, try it out, try to compleat the 42_e.ber it might be a bit thougt
+## This is my implementation of so_long, try to compleat the 42_e.ber it might be a bit thougt
 
 ### Video:
 <div align="center">
