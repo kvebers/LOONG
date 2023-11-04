@@ -1,5 +1,5 @@
-<h2>SOLONG</h2>
-<h3>This is my implementation of so_long, try to compleat the 42_e.ber it might be a bit thougt</h3>
+<h2 style="text-align: center;">SOLONG</h2>
+<h3 style="text-align: center;">This is my implementation of so_long, try to complete the 42_e.ber it might be a bit tough.</h3>
 
 <div align="center">
 
