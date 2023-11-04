@@ -1,5 +1,5 @@
-# So_LONG
-## This is my implementation of so_long, try to compleat the 42_e.ber it might be a bit thougt
+<h2>SOLONG</h2>
+<h3>This is my implementation of so_long, try to compleat the 42_e.ber it might be a bit thougt</h3>
 
 <div align="center">
 
